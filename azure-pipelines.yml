@@ -42,3 +42,10 @@ steps:
     publishVstsFeed: 'Space Game - web - Dependencies/Tailspin.SpaceGame.Web.Models'
     allowPackageConflicts: true
   condition: succeeded()
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'Space Game - web - Dependencies/Tailspin.SpaceGame.Web.Models'
+    publishLocation: 'pipeline'
+
